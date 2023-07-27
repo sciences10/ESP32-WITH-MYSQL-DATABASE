@@ -112,13 +112,13 @@
         <!-- == MONITORING ======================================================================================== -->
         <div class="card">
           <div class="card header">
-            <h3 style="font-size: 1rem;">MONITORING</h3>
+            <h3 style="font-size: 1rem;">監控</h3>
           </div>
           
           <!-- Displays the humidity and temperature values received from ESP32. *** -->
-          <h4 class="temperatureColor"><i class="fas fa-thermometer-half"></i> TEMPERATURE</h4>
+          <h4 class="temperatureColor"><i class="fas fa-thermometer-half"></i> 溫度</h4>
           <p class="temperatureColor"><span class="reading"><span id="ESP32_01_Temp"></span> &deg;C</span></p>
-          <h4 class="humidityColor"><i class="fas fa-tint"></i> HUMIDITY</h4>
+          <h4 class="humidityColor"><i class="fas fa-tint"></i> 濕度</h4>
           <p class="humidityColor"><span class="reading"><span id="ESP32_01_Humd"></span> &percnt;</span></p>
           <!-- *********************************************************************** -->
           
@@ -129,7 +129,7 @@
         <!-- == CONTROLLING ======================================================================================== -->
         <div class="card">
           <div class="card header">
-            <h3 style="font-size: 1rem;">CONTROLLING</h3>
+            <h3 style="font-size: 1rem;">控制</h3>
           </div>
           
           <!-- Buttons for controlling the LEDs on Slave 2. ************************** -->
@@ -151,25 +151,58 @@
     </div>
     
     <br>
-    
+
     <div class="content">
       <div class="cards">
-        <div class="card header" style="border-radius: 15px;">
-            <h3 style="font-size: 0.7rem;">LAST TIME RECEIVED DATA FROM ESP32 [ <span id="ESP32_01_LTRD"></span> ]</h3>
-            <button onclick="window.open('recordtable.php', '_blank');">Open Record Table</button>
+		<div class="card">
+			<div class="card header">
+			<h3 style="font-size: 1rem;">溫度</h3>
+			<button onclick="window.open('recordtable.php', '_blank');">Open Record Table</button>
             <h3 style="font-size: 0.7rem;"></h3>
-        </div>
+		</div>
+		
+		<div>
+			<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2216776/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E6%BA%AB%E5%BA%A6%E6%84%9F%E6%B8%ACDH11&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BA%AB%E5%BA%A6"></iframe>
+		</div>
+          
+        </div>  
       </div>
     </div>
-    <div>
-      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2216776/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E6%BA%AB%E5%BA%A6%E6%84%9F%E6%B8%ACDH11&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BA%AB%E5%BA%A6"></iframe>
+
+	<div class="content">
+      <div class="cards">
+		<div class="card">
+			<div class="card header">
+			<h3 style="font-size: 1rem;">溫度偵測大於25show紅燈</h3>
+            <h3 style="font-size: 0.7rem;"></h3>
+		</div>
+		
+		<div>
+			<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2216776/widgets/690601"></iframe>
+		</div>
+          
+        </div>  
+      </div>
     </div>
-    <div>
-      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2216776/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E6%BF%95%E5%BA%A6%E6%84%9F%E6%B8%ACDH11&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BF%95%E5%BA%A6"></iframe>
+
+
+    <div class="content">
+      <div class="cards">
+		<div class="card">
+			<div class="card header">
+			<h3 style="font-size: 1rem;">濕度</h3>
+			<button onclick="window.open('recordtable.php', '_blank');">Open Record Table</button>
+            <h3 style="font-size: 0.7rem;"></h3>
+		</div>
+		
+		<div>
+			<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2216776/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E6%BF%95%E5%BA%A6%E6%84%9F%E6%B8%ACDH11&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BF%95%E5%BA%A6"></iframe>
+		</div>
+          
+        </div>  
+      </div>
     </div>
-    <div>
-      溫度偵測大於25show紅燈<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2216776/widgets/690601"></iframe>
-    </div>
+
     <!-- ___________________________________________________________________________________________________________________________________ -->
     
     <script>
