@@ -167,6 +167,9 @@
     <div>
       <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2216776/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E6%BF%95%E5%BA%A6%E6%84%9F%E6%B8%ACDH11&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BF%95%E5%BA%A6"></iframe>
     </div>
+    <div>
+      溫度偵測大於25show紅燈<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2216776/widgets/690601"></iframe>
+    </div>
     <!-- ___________________________________________________________________________________________________________________________________ -->
     
     <script>
@@ -262,12 +265,12 @@
 			}
       //------------------------------------------------------------
     </script>
-    <script language="JavaScript">
+    <!-- <script language="JavaScript">
       function myrefresh()
       {
       window.location.reload();
       }
-      setTimeout('myrefresh()',5000); //指定1秒刷新一次
-    </script>
+      setTimeout('myrefresh()',30000); //指定1秒刷新一次
+    </script> -->
   </body>
 </html>
