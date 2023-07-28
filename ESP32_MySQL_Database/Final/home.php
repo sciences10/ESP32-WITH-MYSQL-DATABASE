@@ -259,12 +259,6 @@
         </div>
     </div>
 
-    <br>
-
-    <!-- <span style="background-color: #00878F; padding: 10px;">
-        <a href="./recordtable.php" style="text-decoration: none; color: white;">Open Record Table</a>
-    </span> -->
-
     <script>
         //------------------------------------------------------------
         document.getElementById("ESP32_01_Temp").innerHTML = "NN";

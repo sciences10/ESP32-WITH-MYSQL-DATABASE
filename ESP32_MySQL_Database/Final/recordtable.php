@@ -105,6 +105,12 @@
     </div>
     
     <br>
+
+    <span style="background-color: #00878F; padding: 10px; position: fixed; right: 40px; top: 90vh;">
+        <a href="./home.php" style="text-decoration: none; color: white;">回到首頁</a>
+    </span>
+
+    <br>
     
     <h3 style="color: #0c6980;">ESP32_01 RECORD DATA TABLE</h3>
     
@@ -156,7 +162,7 @@
         ?>
       </tbody>
     </table>
-    
+
     <br>
     
     <div class="btn-group">
