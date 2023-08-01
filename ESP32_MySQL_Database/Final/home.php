@@ -223,7 +223,7 @@
         <div class="cards">
             <div class="card">
                 <div class="card header">
-                    <h3 style="font-size: 1rem;">溫度</h3>
+                    <h3 style="font-size: 1rem;">溫度<span id="ESP32_01_LTRD" style="display: none"></span></h3>
                 </div>
 
                 <div class="container" style="display: flex; justify-content: space-around; align-items: center; padding: 10px;">
