@@ -159,6 +159,27 @@
         }
 
         /* ----------------------------------- */
+
+        @media screen and (min-width:630px) {
+            #container{
+                display: flex;
+                justify-content: space-around; 
+                align-items: center;
+            }
+
+            #table_1{
+                background-color: #00878F;
+                padding: 10px;
+                position: fixed;
+                right: 40px;
+                top: 90vh;
+            }
+
+            #table_2{
+                display: none;
+            }
+        }
+        
     </style>
 </head>
 
@@ -170,7 +191,7 @@
 
     <br>
 
-    <span style="background-color: #00878F; padding: 10px; position: fixed; right: 40px; top: 90vh;">
+    <span id=table_1>
         <a href="./recordtable.php" style="text-decoration: none; color: white;">Open Record Table</a>
     </span>
 
@@ -226,8 +247,8 @@
                     <h3 style="font-size: 1rem;">溫度<span id="ESP32_01_LTRD" style="display: none"></span></h3>
                 </div>
 
-                <div class="container" style="display: flex; justify-content: space-around; align-items: center; padding: 10px;">
-                    <div >
+                <div id="container" style="padding: 10px;">
+                    <div>
                         <iframe width="450" height="260" style="border: 1px solid #cccccc;"
                             src="https://thingspeak.com/channels/2216776/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E6%BA%AB%E5%BA%A6%E6%84%9F%E6%B8%ACDH11&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BA%AB%E5%BA%A6"></iframe>
                     </div>
@@ -258,6 +279,10 @@
             </div>
         </div>
     </div>
+
+    <span id=table_2 style="background-color: #00878F; padding: 10px; position: relative; top: 30px;">
+        <a href="./recordtable.php" style="text-decoration: none; color: white;">Open Record Table</a>
+    </span>
 
     <script>
         //------------------------------------------------------------
