@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>ESP32 WITH MYSQL DATABASE</title>
+    <title>智慧車用感測</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -186,13 +186,13 @@
 <body>
 
     <div class="topnav">
-        <h3>ESP32 WITH MYSQL DATABASE</h3>
+        <h3>智慧車用感測</h3>
     </div>
 
     <br>
 
     <span id=table_1>
-        <a href="./recordtable.php" style="text-decoration: none; color: white;">Open Record Table</a>
+        <a href="./recordtable.php" style="text-decoration: none; color: white;">打開記錄表</a>
     </span>
 
     <!-- DISPLAYS MONITORING AND CONTROLLING -->
@@ -212,7 +212,7 @@
                 <p class="humidityColor"><span class="reading"><span id="ESP32_01_Humd"></span> &percnt;</span></p>
 
                 <p class="statusreadColor">
-                    <span>Status Read Sensor DHT11 : </span>
+                    <span>DHT11 感測讀取狀態 : </span>
                     <span id="ESP32_01_Status_Read_DHT11"></span>
                 </p>
             </div>
@@ -224,12 +224,12 @@
                 </div>
 
                 <!-- Buttons for controlling the LEDs on Slave 2. -->
-                <h4 class="LEDColor"><i class="fas fa-lightbulb"></i> LED 1</h4>
+                <h4 class="LEDColor"><i class="fas fa-lightbulb"></i> LED 1燈</h4>
                 <label class="switch">
                     <input type="checkbox" id="ESP32_01_TogLED_01" onclick="GetTogBtnLEDState('ESP32_01_TogLED_01')">
                     <div class="sliderTS"></div>
                 </label>
-                <h4 class="LEDColor"><i class="fas fa-lightbulb"></i> LED 2</h4>
+                <h4 class="LEDColor"><i class="fas fa-lightbulb"></i> LED 2燈</h4>
                 <label class="switch">
                     <input type="checkbox" id="ESP32_01_TogLED_02" onclick="GetTogBtnLEDState('ESP32_01_TogLED_02')">
                     <div class="sliderTS"></div>
@@ -281,7 +281,7 @@
     </div>
 
     <span id=table_2 style="background-color: #00878F; padding: 10px; position: relative; top: 30px;">
-        <a href="./recordtable.php" style="text-decoration: none; color: white;">Open Record Table</a>
+        <a href="./recordtable.php" style="text-decoration: none; color: white;">打開記錄表</a>
     </span>
 
     <script>
