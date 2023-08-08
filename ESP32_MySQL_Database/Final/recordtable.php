@@ -100,24 +100,30 @@
       }
       /* ----------------------------------- */
 
+      #table_id th{
+        background-color: #0c6980;
+        color: white;
+      }
+
+
       @media screen and (min-width:630px) {
-            #container{
-                display: flex;
-                justify-content: space-around; 
-                align-items: center;
-            }
+          #container{
+              display: flex;
+              justify-content: space-around; 
+              align-items: center;
+          }
 
-            #table_1{
-                background-color: #0c6980;
-                padding: 10px;
-                position: fixed;
-                right: 40px;
-                top: 90vh;
-            }
+          #table_1{
+              background-color: #0c6980;
+              padding: 10px;
+              position: fixed;
+              right: 40px;
+              top: 90vh;
+          }
 
-            #table_2{
-                display: none;
-            }
+          #table_2{
+              display: none;
+          }
         }
     </style>
   </head>
@@ -138,7 +144,7 @@
     <h3 style="color: #0c6980;">溫溼度記錄表</h3>
     
     <div class="table-responsive">
-      <table class="styled-table table" id= "table_id" >
+      <table class="styled-table table table-striped" id="table_id" >
         <thead>
           <tr>
             <th>編號</th>
