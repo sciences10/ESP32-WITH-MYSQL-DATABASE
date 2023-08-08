@@ -1,8 +1,11 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>ESP32 WITH MYSQL DATABASE</title>
+    <title>智慧車用感測</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
     <style>
       html {font-family: Arial; display: inline-block; text-align: center;}
       p {font-size: 1.2rem;}
@@ -96,91 +99,114 @@
         pointer-events:none;
       }
       /* ----------------------------------- */
+
+      @media screen and (min-width:630px) {
+            #container{
+                display: flex;
+                justify-content: space-around; 
+                align-items: center;
+            }
+
+            #table_1{
+                background-color: #0c6980;
+                padding: 10px;
+                position: fixed;
+                right: 40px;
+                top: 90vh;
+            }
+
+            #table_2{
+                display: none;
+            }
+        }
     </style>
   </head>
   
   <body>
     <div class="topnav">
-      <h3>ESP32 WITH MYSQL DATABASE</h3>
+      <h3>智慧車用感測</h3>
     </div>
     
     <br>
 
-    <span style="background-color: #00878F; padding: 10px; position: fixed; right: 40px; top: 90vh;">
+    <span id=table_1>
         <a href="./home.php" style="text-decoration: none; color: white;">回到首頁</a>
     </span>
 
     <br>
     
-    <h3 style="color: #0c6980;">ESP32_01 RECORD DATA TABLE</h3>
+    <h3 style="color: #0c6980;">溫溼度記錄表</h3>
     
-    <table class="styled-table" id= "table_id">
-      <thead>
-        <tr>
-          <th>NO</th>
-          <th>ID</th>
-          <th>BOARD</th>
-          <th>TEMPERATURE (°C)</th>
-          <th>HUMIDITY (%)</th>
-          <th>STATUS READ SENSOR DHT11</th>
-          <th>LED 01</th>
-          <th>LED 02</th>
-          <th>TIME</th>
-          <th>DATE (dd-mm-yyyy)</th>
-        </tr>
-      </thead>
-      <tbody id="tbody_table_record">
-        <?php
-          include 'database.php';
-          $num = 0;
-          //------------------------------------------------------------ The process for displaying a record table containing the DHT11 sensor data and the state of the LEDs.
-          $pdo = Database::connect();
-          // replace_with_your_table_name, on this project I use the table name 'esp32_table_dht11_leds_record'.
-          // This table is used to store and record DHT11 sensor data updated by ESP32. 
-          // This table is also used to store and record the state of the LEDs, the state of the LEDs is controlled from the "home.php" page. 
-          // To store data, this table is operated with the "INSERT" command, so this table will contain many rows.
-          $sql = 'SELECT * FROM esp32_table_dht11_leds_record ORDER BY date, time DESC';
-          foreach ($pdo->query($sql) as $row) {
-            $date = date_create($row['date']);
-            $dateFormat = date_format($date,"d-m-Y");
-            $num++;
-            echo '<tr>';
-            echo '<td>'. $num . '</td>';
-            echo '<td class="bdr">'. $row['id'] . '</td>';
-            echo '<td class="bdr">'. $row['board'] . '</td>';
-            echo '<td class="bdr">'. $row['temperature'] . '</td>';
-            echo '<td class="bdr">'. $row['humidity'] . '</td>';
-            echo '<td class="bdr">'. $row['status_read_sensor_dht11'] . '</td>';
-            echo '<td class="bdr">'. $row['LED_01'] . '</td>';
-            echo '<td class="bdr">'. $row['LED_02'] . '</td>';
-            echo '<td class="bdr">'. $row['time'] . '</td>';
-            echo '<td>'. $dateFormat . '</td>';
-            echo '</tr>';
-          }
-          Database::disconnect();
-          //------------------------------------------------------------
-        ?>
-      </tbody>
-    </table>
-
-    <br>
-    
-    <div class="btn-group">
-      <button class="button" id="btn_prev" onclick="prevPage()">Prev</button>
-      <button class="button" id="btn_next" onclick="nextPage()">Next</button>
-      <div style="display: inline-block; position:relative; border: 0px solid #e3e3e3; float: center; margin-left: 2px;;">
-        <p style="position:relative; font-size: 14px;"> Table : <span id="page"></span></p>
-      </div>
-      <select name="number_of_rows" id="number_of_rows">
-        <option value="10">10</option>
-        <option value="25">25</option>
-        <option value="50">50</option>
-        <option value="100">100</option>
-      </select>
-      <button class="button" id="btn_apply" onclick="apply_Number_of_Rows()">Apply</button>
+    <div class="table-responsive">
+      <table class="styled-table table" id= "table_id" >
+        <thead>
+          <tr>
+            <th>編號</th>
+            <!-- <th>ID</th> -->
+            <!-- <th>BOARD</th> -->
+            <th>溫度 (°C)</th>
+            <th>濕度 (%)</th>
+            <th>感測狀態</th>
+            <th>LED 01</th>
+            <th>LED 02</th>
+            <th>時間</th>
+            <th>日期 (日-月-年)</th>
+          </tr>
+        </thead>
+        <tbody id="tbody_table_record">
+          <?php
+            include 'database.php';
+            $num = 0;
+            //------------------------------------------------------------ The process for displaying a record table containing the DHT11 sensor data and the state of the LEDs.
+            $pdo = Database::connect();
+            // replace_with_your_table_name, on this project I use the table name 'esp32_table_dht11_leds_record'.
+            // This table is used to store and record DHT11 sensor data updated by ESP32. 
+            // This table is also used to store and record the state of the LEDs, the state of the LEDs is controlled from the "home.php" page. 
+            // To store data, this table is operated with the "INSERT" command, so this table will contain many rows.
+            $sql = 'SELECT * FROM esp32_table_dht11_leds_record ORDER BY date, time DESC';
+            foreach ($pdo->query($sql) as $row) {
+              $date = date_create($row['date']);
+              $dateFormat = date_format($date,"d-m-Y");
+              $num++;
+              echo '<tr>';
+              echo '<td>'. $num . '</td>';
+              // echo '<td class="bdr">'. $row['id'] . '</td>';
+              // echo '<td class="bdr">'. $row['board'] . '</td>';
+              echo '<td class="bdr">'. $row['temperature'] . '</td>';
+              echo '<td class="bdr">'. $row['humidity'] . '</td>';
+              echo '<td class="bdr">'. $row['status_read_sensor_dht11'] . '</td>';
+              echo '<td class="bdr">'. $row['LED_01'] . '</td>';
+              echo '<td class="bdr">'. $row['LED_02'] . '</td>';
+              echo '<td class="bdr">'. $row['time'] . '</td>';
+              echo '<td>'. $dateFormat . '</td>';
+              echo '</tr>';
+            }
+            Database::disconnect();
+            //------------------------------------------------------------
+          ?>
+        </tbody>
+      </table>
     </div>
 
     <br>
+    
+    <div class="btn-group" style="height:35px">
+      <button class="button" id="btn_prev" onclick="prevPage()">上頁</button>
+      <div style="display: flex; flex-wrap: wrap; align-content: center; padding: 10px">
+        <p id="page" style="font-size: 14px; margin: 0px"></p>
+      </div>
+      <select name="number_of_rows" id="number_of_rows" style="display: none">
+        <option value="50">50</option>
+      </select>
+      <button class="button" id="btn_apply" onclick="apply_Number_of_Rows()" style="display: none">確認</button>
+      <button class="button" id="btn_next" onclick="nextPage()">下頁</button>
+    </div>
+
+    <br>
+
+    <span id=table_2 style="background-color: #0c6980; padding: 10px; position: relative; top: 30px;">
+    <a href="./home.php" style="text-decoration: none; color: white;">回到首頁</a>
+    </span>
     
     <script>
       //------------------------------------------------------------
@@ -239,7 +265,8 @@
           }
         }
           
-        page_span.innerHTML = page + "/" + numPages() + " (Total Number of Rows = " + (l-1) + ") | Number of Rows : ";
+        // page_span.innerHTML = page + "/" + numPages() + " (Total Number of Rows = " + (l-1) + ") | Number of Rows : ";
+        page_span.innerHTML = "紀錄表 :" + page + "/" + numPages() + " 總筆數 = " + (l-1) ;
         
         if (page == 0 && numPages() == 0) {
           btn_prev.disabled = true;

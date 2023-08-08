@@ -168,7 +168,7 @@
             }
 
             #table_1{
-                background-color: #00878F;
+                background-color: #0c6980;
                 padding: 10px;
                 position: fixed;
                 right: 40px;
@@ -280,7 +280,7 @@
         </div>
     </div>
 
-    <span id=table_2 style="background-color: #00878F; padding: 10px; position: relative; top: 30px;">
+    <span id=table_2 style="background-color: #0c6980; padding: 10px; position: relative; top: 30px;">
         <a href="./recordtable.php" style="text-decoration: none; color: white;">打開記錄表</a>
     </span>
 
