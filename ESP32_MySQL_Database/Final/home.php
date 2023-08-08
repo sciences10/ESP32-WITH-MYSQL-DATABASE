@@ -178,6 +178,10 @@
             #table_2{
                 display: none;
             }
+
+            .iframeSet{
+                width: 450px;
+            }
         }
         
     </style>
@@ -248,10 +252,8 @@
                 </div>
 
                 <div id="container" style="padding: 10px;">
-                    <div>
-                        <iframe max-width="450" height="260" style="border: 1px solid #cccccc;"
-                            src="https://thingspeak.com/channels/2216776/charts/1?width=auto&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E6%BA%AB%E5%BA%A6%E6%84%9F%E6%B8%ACDH11&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BA%AB%E5%BA%A6"></iframe>
-                    </div>
+                    <iframe class="iframeSet" max-width="450" height="260" style="border: 1px solid #cccccc;"
+                        src="https://thingspeak.com/channels/2216776/charts/1?width=auto&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E6%BA%AB%E5%BA%A6%E6%84%9F%E6%B8%ACDH11&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BA%AB%E5%BA%A6"></iframe>
 
                     <div>
                         <iframe width="200" height="200" style="border: 1px solid #cccccc;"
@@ -274,7 +276,7 @@
                 </div>
 
                 <div style="padding: 10px;">
-                    <iframe max-width="450" height="260" style="border: 1px solid #cccccc;"
+                    <iframe class="iframeSet" max-width="450" height="260" style="border: 1px solid #cccccc;"
                         src="https://thingspeak.com/channels/2216776/charts/2?width=auto&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E6%BF%95%E5%BA%A6%E6%84%9F%E6%B8%ACDH11&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BF%95%E5%BA%A6"></iframe>
                 </div>
 
