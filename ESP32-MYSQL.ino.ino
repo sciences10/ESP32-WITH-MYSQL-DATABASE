@@ -38,6 +38,11 @@ int send_Humd;
 String send_Status_Read_DHT11 = "";
 //======================================== 
 
+
+//請修改為你自己的API Key，並將https改為http
+String url = "http://api.thingspeak.com/update?api_key=CTOBLBM0YUB0EOYC";
+//======================================== 
+
 //________________________________________________________________________________ Subroutine to control LEDs after successfully fetching data from database.
 void control_LEDs() {
   Serial.println();
@@ -140,7 +145,7 @@ void setup() {
   // If within 20 seconds the ESP32 has not been successfully connected to WiFi, the ESP32 will restart.
   // I made this condition because on my ESP32, there are times when it seems like it can't connect to WiFi, so it needs to be restarted to be able to connect to WiFi.
 
-  int connecting_process_timed_out = 20; //--> 20 = 20 seconds.
+  int connecting_process_timed_out = 2; //--> 20 = 20 seconds.
   connecting_process_timed_out = connecting_process_timed_out * 2;
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print(".");
@@ -268,7 +273,48 @@ void loop() {
     digitalWrite(ON_Board_LED, LOW);
     //........................................ 
     
-    delay(4000);
+
+
+
+    //----------------------------------------
+    delay(200);
+
   }
-  //---------------------------------------- 
+  //----------------------------------------
+    Serial.print("使用核心編號：");
+   Serial.println(xPortGetCoreID());
+  //嘗試讀取溫濕度內容
+  //byte temperature = 0;
+  //byte humidity = 0;
+  // int err = SimpleDHTErrSuccess;
+  // if ((err = dht11.read(&temperature, &humidity, NULL)) != SimpleDHTErrSuccess) {
+  //   Serial.print("溫度計讀取失敗，錯誤碼="); Serial.println(err); delay(1000);
+  //   return;
+  // }
+  //讀取成功，將溫濕度顯示在序列視窗
+  Serial.print("溫度計讀取成功: ");
+  Serial.printf("Temperature : %.2f °C\n", send_Temp);
+  //Serial.print((float)send_Temp); Serial.print(" *C, ");
+  Serial.print((int)send_Humd); Serial.println(" H");
+  //開始傳送到thingspeak
+  Serial.println("啟動網頁連線");
+  HTTPClient http;
+  //將溫度及濕度以http get參數方式補入網址後方
+  String url1 = url + "&field1=" + (float)send_Temp + "&field2=" + (int)send_Humd;
+  //http client取得網頁內容
+  http.begin(url1);
+  int httpCode = http.GET();
+  if (httpCode == HTTP_CODE_OK)      {
+    //讀取網頁內容到payload
+    String payload = http.getString();
+    //將內容顯示出來
+    Serial.print("網頁內容=");
+    Serial.println(payload);
+  } else {
+    //讀取失敗
+    Serial.println("網路傳送失敗");
+  }
+  http.end();
+  delay(20000);//休息20秒
+
 }
