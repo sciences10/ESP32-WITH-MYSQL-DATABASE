@@ -24,6 +24,11 @@
 
         body {
             margin: 0;
+            padding: 0;
+        }
+
+        *{
+            box-sizing: border-box;
         }
 
         .topnav {
@@ -247,7 +252,7 @@
                     <h3 style="font-size: 1rem;">溫度<span id="ESP32_01_LTRD" style="display: none"></span></h3>
                 </div>
 
-                <div id="container" style="padding: 10px;">
+                <div id="container">
                     <div>
                         <iframe width="450" height="260" style="border: 1px solid #cccccc;"
                             src="https://thingspeak.com/channels/2216776/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E6%BA%AB%E5%BA%A6%E6%84%9F%E6%B8%ACDH11&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BA%AB%E5%BA%A6"></iframe>
@@ -271,7 +276,7 @@
                     <h3 style="font-size: 1rem;">濕度</h3>
                 </div>
 
-                <div style="padding: 10px;">
+                <div>
                     <iframe width="450" height="260" style="border: 1px solid #cccccc;"
                         src="https://thingspeak.com/channels/2216776/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E6%BF%95%E5%BA%A6%E6%84%9F%E6%B8%ACDH11&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BF%95%E5%BA%A6"></iframe>
                 </div>
