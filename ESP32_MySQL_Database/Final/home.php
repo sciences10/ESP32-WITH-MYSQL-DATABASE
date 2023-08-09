@@ -287,7 +287,15 @@
     <span id=table_2 style="background-color: #0c6980; padding: 10px; position: relative; top: 30px;">
         <a href="./recordtable.php" style="text-decoration: none; color: white;">打開記錄表</a>
     </span>
-
+    <div>
+        溫度<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2219774/charts/1?bgcolor=%23FFFFFF&color=%23d62020&dynamic=true&results=100&title=%E6%BA%AB%E5%BA%A6%E6%84%9F%E6%B8%AC&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BA%AB%E5%BA%A6"></iframe>
+    </div>
+    <div>
+        濕度<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2219774/charts/2?bgcolor=%23FFFFFF&color=%23d62020&dynamic=true&results=100&title=%E6%BF%95%E5%BA%A6%E6%84%9F%E6%B8%AC&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BF%95%E5%BA%A6"></iframe>
+    </div>
+    <div>
+        車距DATA<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2226167/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E8%BB%8A%E8%B7%9D&type=spline&yaxis=%C2%B0C"></iframe>
+    </div>
     <script>
         //------------------------------------------------------------
         document.getElementById("ESP32_01_Temp").innerHTML = "NN";
