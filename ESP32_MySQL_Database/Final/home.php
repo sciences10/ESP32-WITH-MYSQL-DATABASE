@@ -199,6 +199,67 @@
         <a href="./recordtable.php" style="text-decoration: none; color: white;">打開記錄表</a>
     </span>
 
+    <br>
+    
+    <div class="content">
+        <div class="cards">
+            <div class="card">
+                <div class="card header">
+                    <h3 style="font-size: 1rem;">溫度感測<span id="ESP32_01_LTRD" style="display: none"></span></h3>
+                </div>
+                
+                <div id="container" style="padding: 10px;">
+                    <iframe class="iframeSet" max-width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2219774/charts/1?width=auto&bgcolor=%23FFFFFF&color=%23d62020&dynamic=true&results=100&title=%E6%BA%AB%E5%BA%A6%E6%84%9F%E6%B8%AC&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BA%AB%E5%BA%A6"></iframe>
+                        
+                        <div>
+                            <iframe width="200" height="200" style="border: 1px solid #cccccc;"
+                            src="https://thingspeak.com/channels/2219774/widgets/694406"></iframe>
+                            <p style="font-size: 15px;">溫度偵測大於28show紅燈</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <br>
+        
+        <div class="content">
+            <div class="cards">
+                <div class="card">
+                    <div class="card header">
+                        <h3 style="font-size: 1rem;">濕度感測</h3>
+                    </div>
+                    
+                <div style="padding: 10px;">
+                    <iframe class="iframeSet" max-width="450" height="260" style="border: 1px solid #cccccc;"
+                        src="https://thingspeak.com/channels/2219774/charts/2?width=auto&bgcolor=%23FFFFFF&color=%23d62020&dynamic=true&results=100&title=%E6%BF%95%E5%BA%A6%E6%84%9F%E6%B8%AC&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BF%95%E5%BA%A6"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <br>
+    
+    <div class="content">
+        <div class="cards">
+            <div class="card">
+                <div class="card header">
+                    <h3 style="font-size: 1rem;">車距</h3>
+                </div>
+                
+                <div style="padding: 10px;">
+                    <iframe class="iframeSet" max-width="450" height="260" style="border: 1px solid #cccccc;"
+                    src="https://thingspeak.com/channels/2226167/charts/1?width=auto&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E8%BB%8A%E8%B7%9D&type=spline&yaxis=%C2%B0C"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <br>
+    
     <!-- DISPLAYS MONITORING AND CONTROLLING -->
     <div class="content">
         <div class="cards">
@@ -244,61 +305,11 @@
 
     <br>
 
-    <div class="content">
-        <div class="cards">
-            <div class="card">
-                <div class="card header">
-                    <h3 style="font-size: 1rem;">溫度<span id="ESP32_01_LTRD" style="display: none"></span></h3>
-                </div>
-
-                <div id="container" style="padding: 10px;">
-                    <iframe class="iframeSet" max-width="450" height="260" style="border: 1px solid #cccccc;"
-                        src="https://thingspeak.com/channels/2216776/charts/1?width=auto&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E6%BA%AB%E5%BA%A6%E6%84%9F%E6%B8%ACDH11&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BA%AB%E5%BA%A6"></iframe>
-
-                    <div>
-                        <iframe width="200" height="200" style="border: 1px solid #cccccc;"
-                            src="https://thingspeak.com/channels/2216776/widgets/690601?"></iframe>
-                        <p style="font-size: 15px;">溫度偵測大於25show紅燈</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <br>
-
-    <div class="content">
-        <div class="cards">
-            <div class="card">
-                <div class="card header">
-                    <h3 style="font-size: 1rem;">濕度</h3>
-                </div>
-
-                <div style="padding: 10px;">
-                    <iframe class="iframeSet" max-width="450" height="260" style="border: 1px solid #cccccc;"
-                        src="https://thingspeak.com/channels/2216776/charts/2?width=auto&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E6%BF%95%E5%BA%A6%E6%84%9F%E6%B8%ACDH11&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BF%95%E5%BA%A6"></iframe>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
     <span id=table_2 style="background-color: #0c6980; padding: 10px; position: relative; top: 30px;">
         <a href="./recordtable.php" style="text-decoration: none; color: white;">打開記錄表</a>
     </span>
-    <div>
-        溫度<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2219774/charts/1?bgcolor=%23FFFFFF&color=%23d62020&dynamic=true&results=100&title=%E6%BA%AB%E5%BA%A6%E6%84%9F%E6%B8%AC&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BA%AB%E5%BA%A6"></iframe>
-    </div>
-    <div>
-        濕度<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2219774/charts/2?bgcolor=%23FFFFFF&color=%23d62020&dynamic=true&results=100&title=%E6%BF%95%E5%BA%A6%E6%84%9F%E6%B8%AC&type=line&xaxis=%E6%99%82%E9%96%93&yaxis=%E6%BF%95%E5%BA%A6"></iframe>
-    </div>
-    <div>
-        車距DATA<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2226167/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E8%BB%8A%E8%B7%9D&type=spline&yaxis=%C2%B0C"></iframe>
-    </div>
-    <div>
-    溫度警示燈<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2219774/widgets/694406"></iframe>
-    </div>
+    
+
     <script>
         //------------------------------------------------------------
         document.getElementById("ESP32_01_Temp").innerHTML = "NN";
@@ -306,7 +317,7 @@
         document.getElementById("ESP32_01_Status_Read_DHT11").innerHTML = "NN";
         document.getElementById("ESP32_01_LTRD").innerHTML = "NN";
         //------------------------------------------------------------
-
+        
         Get_Data("esp32_01");
 
         setInterval(myTimer, 5000);
