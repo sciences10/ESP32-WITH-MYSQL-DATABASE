@@ -297,7 +297,7 @@
         車距DATA<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2226167/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E8%BB%8A%E8%B7%9D&type=spline&yaxis=%C2%B0C"></iframe>
     </div>
     <div>
-    溫度警示燈<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2219774/widgets/694403"></iframe>
+    溫度警示燈<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2219774/widgets/694406"></iframe>
     </div>
     <script>
         //------------------------------------------------------------
