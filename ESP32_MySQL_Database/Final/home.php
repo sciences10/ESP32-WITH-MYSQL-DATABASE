@@ -250,7 +250,8 @@
                 </div>
                 
                 <div style="padding: 10px;">
-                    <iframe class="iframeSet" max-width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2226167/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=CO2&type=column&yaxis=e"></iframe>
+
+                    <iframe class="iframeSet" max-width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2226167/charts/2?width=auto&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=CO2&type=column&yaxis=e"></iframe>
                 </div>
 
             </div>
@@ -267,7 +268,7 @@
                 </div>
                 
                 <div style="padding: 10px;">
-                    <iframe class="iframeSet" max-width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2226167/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E8%BB%8A%E8%B7%9D&type=spline&yaxis=CM"></iframe>
+                    <iframe class="iframeSet" max-width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2226167/charts/1?width=auto&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=%E8%BB%8A%E8%B7%9D&type=spline&yaxis=CM"></iframe>
                 </div>
 
             </div>
