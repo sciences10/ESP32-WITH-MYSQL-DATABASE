@@ -12,7 +12,7 @@
       h4 {font-size: 0.8rem;}
       body {margin: 0;}
       /* ----------------------------------- TOPNAV STYLE */
-      .topnav {overflow: hidden; background-color: #0c6980; color: white; font-size: 1.2rem;}
+      .topnav {overflow: hidden; background-color: rgba(19, 58, 123, 0.9); color: white; font-size: 1.2rem;}
       /* ----------------------------------- */
       
       /* ----------------------------------- TABLE STYLE */
@@ -30,7 +30,7 @@
       }
 
       .styled-table thead tr {
-        background-color: #0c6980;
+        background-color: rgba(19, 58, 123, 0.9);
         color: #ffffff;
         text-align: left;
       }
@@ -66,7 +66,7 @@
       
       /* ----------------------------------- BUTTON STYLE */
       .btn-group .button {
-        background-color: #0c6980; /* Green */
+        background-color: rgba(19, 58, 123, 0.9); /* Green */
         border: 1px solid #e3e3e3;
         color: white;
         padding: 5px 8px;
@@ -87,7 +87,7 @@
       }
 
       .btn-group .button:active {
-        background-color: #0c6980;
+        background-color: rgba(19, 58, 123, 0.9);
         transform: translateY(1px);
       }
 
@@ -110,7 +110,7 @@
       }
 
       #table_id th{
-        background-color: #0c6980;
+        background-color: rgba(19, 58, 123, 0.9);
         color: white;
       }
 
@@ -123,7 +123,7 @@
           }
 
           #table_1{
-              background-color: #0c6980;
+              background-color: rgba(19, 58, 123, 0.9);
               padding: 10px;
               position: fixed;
               right: 40px;
@@ -219,7 +219,7 @@
 
     <br>
 
-    <span id=table_2 style="background-color: #0c6980; padding: 10px; position: relative; top: 30px;">
+    <span id=table_2 style="background-color: rgba(19, 58, 123, 0.9); padding: 10px; position: relative; top: 30px;">
     <a href="./home.php" style="text-decoration: none; color: white;">回到首頁</a>
     </span>
     

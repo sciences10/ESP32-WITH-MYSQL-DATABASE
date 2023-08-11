@@ -9,7 +9,6 @@
     <link rel="icon" href="data:,">
 
     <link rel="stylesheet" href="./style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
     <style>
         html {
@@ -32,7 +31,7 @@
 
         .topnav {
             overflow: hidden;
-            background-color: #0c6980;
+            background-color: rgba(19, 58, 123, 0.9);
             color: white;
             font-size: 1.2rem;
         }
@@ -44,12 +43,12 @@
         .card {
             background-color: white;
             box-shadow: 0px 0px 10px 1px rgba(140, 140, 140, .5);
-            border: 1px solid #0c6980;
+            border: 1px solid black;
             border-radius: 15px;
         }
 
         .card.header {
-            background-color: #0c6980;
+            background-color: rgba(19, 58, 123, 0.9);
             color: white;
             border-radius: 12px 12px 0px 0px;
         }
@@ -172,7 +171,7 @@
             }
 
             #table_1{
-                background-color: #0c6980;
+                background-color: rgba(19, 58, 123, 0.9);
                 padding: 10px;
                 position: fixed;
                 right: 40px;
@@ -186,25 +185,25 @@
             .iframeSet{
                 width: 450px;
             }
+        }
 
-            #bg{
-                display: block;
-                position: fixed;
-                z-index: -1;
-            }
+        #bg{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background-image: url("./img/bg.jpg");
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
 
-            .mask{
-                width: 100%;
-                height: 100%;
-                background-color: rgb(189, 188, 190, 0.4);
-            }
+        .mask{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(189, 188, 190, 0.3);
         }
 
         @media screen and (max-width:630px) {
-            #bg{
-                display: none;
-            }
-
             #table_1{
                 display: none;
             }
@@ -213,64 +212,17 @@
     </style>
 </head>
 
-<body style="background: rgb(209,228,234);">
-
-<div class="country-wrap" id="bg">
-
-    <div class="grass"></div>
-    <div class="street">
-        <div class="car">
-        <div class="car-body">
-            <div class="car-top-back">
-                <div class="back-curve"></div>
-            </div>
-            <div class="car-gate"></div>
-            <div class="car-top-front">
-                <div class="wind-sheild"></div>
-            </div>
-            <div class="bonet-front"></div>
-            <div class="stepney"></div>
-        </div>
-        <div class="boundary-tyre-cover">
-            <div class="boundary-tyre-cover-back-bottom"></div>
-            <div class="boundary-tyre-cover-inner"></div>	
-        </div>
-        <div class="tyre-cover-front">
-            <div class="boundary-tyre-cover-inner-front"></div>
-        </div>
-        <div class="base-axcel">
-            
-        </div>
-        <div class="front-bumper"></div>
-        <div class="tyre">		
-            <div class="gap"></div>	
-        </div>
-        <div class="tyre front">
-            <div class="gap"></div>	
-        </div>
-        <div class="car-shadow"></div>
-    </div>
-    </div>
-    <div class="street-stripe"></div>
-    <div class="hill">
-        <div class="tree-1">
-            <div class="branch-1"></div>
-            <div class="branch-2"></div>
-            <div class="branch-3"></div>
-        </div>
-        <div class="tree-1">
-            <div class="branch"></div>
-            <div class="trunk"></div>
-        </div>
-    </div>
-
+<div id="bg">
     <div class="mask"></div>
-    
 </div>
+
 
 <!-- ----------------------------------------------------------------------------------- -->
 
-<div class="topnav">
+    <div class="topnav" style="display: flex; justify-content: center; align-items: center;">
+        <div id="carLogo">
+            <!-- <img src="./img/car.png" alt=""> -->
+        </div>
         <h3>智慧車用感測</h3>
     </div>
 
@@ -403,7 +355,7 @@
 
     <br>
 
-    <span id=table_2 style="background-color: #0c6980; padding: 10px; position: relative; top: 30px;">
+    <span id=table_2 style="background-color: rgba(19, 58, 123, 0.9); padding: 10px; position: relative; top: 30px;">
         <a href="./recordtable.php" style="text-decoration: none; color: white;">打開記錄表</a>
     </span>   
     
@@ -498,9 +450,6 @@
             xmlhttp.send("id=" + id + "&lednum=" + lednum + "&ledstate=" + ledstate);
         }
     </script>
-
-    <!-- partial -->
-    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 </body>
 
