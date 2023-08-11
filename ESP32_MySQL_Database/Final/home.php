@@ -187,6 +187,24 @@
             }
         }
 
+        #Logo.logo_l{
+            width: 70px;
+            height: 70px;
+            background-image: url("./img/logo01.png");
+            background-size: cover;
+            background-position: center;
+            margin-right: 15px;
+        }
+
+        #Logo.logo_r{
+            width: 70px;
+            height: 70px;
+            background-image: url("./img/logo02.png");
+            background-size: cover;
+            background-position: center;
+            margin-left: 15px;
+        }
+
         #bg{
             width: 100%;
             height: 100%;
@@ -200,7 +218,7 @@
         .mask{
             width: 100%;
             height: 100%;
-            background-color: rgb(189, 188, 190, 0.3);
+            background-color: rgb(189, 188, 190, 0.4);
         }
 
         @media screen and (max-width:630px) {
@@ -212,18 +230,14 @@
     </style>
 </head>
 
-<div id="bg">
-    <div class="mask"></div>
-</div>
-
-
-<!-- ----------------------------------------------------------------------------------- -->
+    <div id="bg">
+        <div class="mask"></div>
+    </div>
 
     <div class="topnav" style="display: flex; justify-content: center; align-items: center;">
-        <div id="carLogo">
-            <!-- <img src="./img/car.png" alt=""> -->
-        </div>
+        <div id="Logo" class="logo_l"></div>
         <h3>智慧車用感測</h3>
+        <div id="Logo" class="logo_r"></div>
     </div>
 
     <br>
